@@ -1,167 +1,54 @@
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #404040;
-  background-image: url("pen1.jpg");
-  background-repeat: no-repeat;
-
-}
-.container {
-  margin:80px auto;
-  width: 640px;
-}
-.login {
-	position: relative;
-	margin :0 auto;
-	/*padding:40px 40px 40px;*/
-  padding-top: 40px;
-  padding-right: 40px ;
-  padding-bottom: 40px;
-  padding-left: 40px;
-	background:#f1f1f1;
-	border-radius: 5px;
-	width: 360px;
-	box-shadow: 5px 10px 18px #e5a877;
-}
-.login:before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  bottom: -8px;
-  left: -8px;
-  z-index: -1;
-  background: rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
+  background-image: url("img/pen1.jpg");
 }
 
+form {
+  margin: 150px auto;
+  width: 340px;
 
-.login h1 {
-	/*margin: -40px -40px -41px;*/
-  margin-top: -40px ;
-  margin-right: -40px ;
-  margin-bottom: -41px;
-  margin-left: -40px;
-	line-height: 60px;
-	color: white;
-	font-size: 30px;
-	font-weight: bold;
-	text-align: center;
-	text-shadow: 0 2px #e5a877;
-	background: #333;
-	border-bottom: 4px solid #e5a877;
-	border-radius: 4px 4px 0 0;
-	box-shadow: 0 1px #e5a877;
-}
-.login p {
-	/*margin: 40px 0 0;*/
-  margin-top: 40px ;
-  margin-right: 0px ;
-  margin-bottom: 0px;
-  margin-left: 0px;
-
-}
- 
-.login p:first-child {margin-top: 80px;}
-
-.login input[type=text], input[type=password] {
-	width: 300px;
-	font-size:20px;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
 }
 
-
- .login p.submit {
-    text-align: center;
- }
- .login p.submit input[value=Login]{
-  color:white;
-  background-color: #333;
- 	font-size:25px;
- }
- .login p.submit input[value=Login]:hover {
- 	background-color: #f2dce9;
-  color: black;
- }
-.login-help {
-  /*margin: 40px 0;*/
-  margin-top: 40px; 
-  margin-right: 0px;
-  margin-bottom: 40px;
-  margin-left: 0px;
+label {
+  display: inline-block;
+  width: 90px;
   font-size: 20px;
-  color: #79baf7;
-  text-align: center;
-  text-shadow: 0 1px black;
+  font-family: Georgia;
+  color: white;
+  text-align: left;
+  margin-bottom: 10px;
 }
-.login-help a {
-  color:#ea8e2c ;
+
+input {
+  font: 1em sans-serif;
+  width: 330px;
+
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+
+  border: 3px solid skyblue;
+  border-radius: 3px;}
+
+input:focus {
+  border-color: #000;
+}
+
+.button {
+  padding-left: 110px;
+}
+
+button {
+  margin-left: .5em;
+  border: 3px solid skyblue;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+a {
+  color: white;
+  font-size: 13px;
   text-decoration: none;
-  font-weight: bold;
-}
-.login-help a:hover {
-  text-decoration: underline;
-}
-.sign-up {
-  /*margin: 40px 0;*/
-  margin-top: 40px; 
-  margin-right: 0px;
-  margin-bottom: 40px;
-  margin-left: 0px;
-  font-size: 20px;
-  color: #79baf7;
-  text-align: center;
-  text-shadow: 0 1px black;
-}
-.sign-up a {
-  color: #ea8e2c ;
-  text-decoration: none;
-  font-weight: bold;
-}
-.sign-up a:hover {
-  text-decoration: underline;
-}
-
-@media screen and (max-width: 700px) {
-    .container {
-      padding: auto;
-      margin: auto;
-      width: 80%;
-      margin-top: 20%;
-    }
-}
-
-@media screen and (max-width: 600px) {
-
-    .container {
-      padding: auto;
-      margin: 10% auto;
-      width: 60%;
-      margin-left:15%; 
-    }
-    .login {
-      margin-top:30%;
-      width:80%;
-    }
-    .login h1 {
-      font-size: 20px;
-    }
-    .login input[type=text]   {
-      width: 90%;
-      font-size:15px;
-    }
-
-    .login input[type=password] {
-      width: 90%;
-      font-size:15px;
-    }
-   .login p.submit input[value=Login] {
-      width: 60%;
-      font-size: 15px;
-    }
-    .login-help {
-      font-size: 15px;
-    }
-    .sign-up {
-      font-size: 15px;  
-    }
 }

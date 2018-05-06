@@ -12,6 +12,7 @@ body {
     padding: 10px;
     text-align: center;
     background-image: url(img/ceva.jpg);
+    background-color: rgba(0, 0, 0, 0.5);
     color: #76323F;
 }
 
@@ -21,7 +22,7 @@ body {
 }
 
 .navbar {
-    overflow: hidden; 
+    overflow: hidden;
     background-color: #565656; 
 }
 
@@ -50,11 +51,11 @@ body {
 }
 
 .navbar form:hover {
-    background-color: #76323F;
+    background-color: #76323F; 
     color: white; 
 }
 
-.navbar input[type=search] {
+.navbar input[type=text] {
     text-align: center; 
     padding: 4px 2px; 
 }
@@ -65,7 +66,7 @@ body {
 }
 
 .side {
-    flex: 25%;
+    flex: 25%; 
     background-color: #76323F; 
     color: white;
     padding: 20px; 
@@ -75,41 +76,37 @@ body {
     flex: 75%; 
     background-color: white; 
     color: #76323F;
-    padding: 0 0 20px 0; 
-}
-
-.main p {
-    font-size: 20px;
-    margin: 0 5% 0 5%;
-}
-
-.main img {
-	height: 25%; 
-	width: 50%;
-}
-
-.column {
-    float: left;
-    width: 50%;
-    height: 70%;
-    padding: 5px;
-    text-align: center;
+    padding: 0 0 20px 0;
 }
 
 .main h1 {
-	text-align: center;
+    text-align: center;
 }
 
-.column a {
-    text-decoration: none;
-    color: #76323F;
+.main h3, .main p {
+    padding-left: 5%;
 }
 
-@media screen and (max-width: 1000px) {
+.content {
+    width: 80%;
+    margin-left: 10%;
+    padding: 20px;
+    overflow: hidden;
+}
 
-	.main img {
-		height: 22%;
-	}
+.content img {
+    margin-right: 15px;
+    float: left;
+    width: 30%;
+}
+
+.content h3, .content p{
+    padding-left: 50%;
+}
+
+#price {
+    font-size: 25px;
+    font-style: bold;
 }
 
 @media screen and (max-width: 700px) {
@@ -145,7 +142,7 @@ body {
 }
 
 .footer {
-    font-size: 15px;
+	font-size: 15px;
     padding: 1px; 
     text-align: center; 
     background: #ddd; 

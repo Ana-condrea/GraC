@@ -11,7 +11,7 @@ body {
 .header {
     padding: 10px;
     text-align: center;
-    background-image: url(ceva.jpg);
+    background-image: url(img/ceva.jpg);
     background-color: rgba(0, 0, 0, 0.5);
     color: #76323F;
 }
@@ -76,7 +76,7 @@ body {
     flex: 75%; 
     background-color: white; 
     color: #76323F;
-    padding: 0 0 20px 0; 
+    padding: 0 0 20px 0;
 }
 
 .main h1 {
@@ -87,6 +87,32 @@ body {
     padding-left: 5%;
 }
 
+.content {
+    width: 80%;
+    margin-left: 10%;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.content img {
+    margin-right: 15px;
+    float: left;
+    width: 30%;
+}
+
+.content h3, .content p{
+    padding-left: 50%;
+}
+
+#price {
+    font-size: 25px;
+    font-style: bold;
+}
+
+#cev {
+    margin-top: 10%;
+}
+
 @media screen and (max-width: 700px) {
     .row { 
         flex-direction: column;
@@ -95,11 +121,11 @@ body {
 
 @media screen and (max-width: 500px) {
     .header h1 {
-    	font-size: 40px;
+        font-size: 40px;
     }
 
     .header {
-    	background-image: url(ceva2.jpg);
+        background-image: url(img/ceva2.jpg);
     }
 }
 
@@ -120,7 +146,7 @@ body {
 }
 
 .footer {
-	font-size: 15px;
+    font-size: 15px;
     padding: 1px; 
     text-align: center; 
     background: #ddd; 
