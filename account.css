@@ -147,6 +147,7 @@ body {
 }
 
 .content img {
+    margin-top: 5%;
     margin-right: 15px;
     float: left;
     width: 30%;
@@ -156,9 +157,8 @@ body {
     padding-left: 50%;
 }
 
-.price {
+b {
     font-size: 25px;
-    font-style: bold;
 }
 
 .content button {
@@ -189,7 +189,6 @@ body {
     .row .side .text {
         font-size:75%;
     }
-
 
 }
 
@@ -232,7 +231,6 @@ body {
     .navbar input {
         width: 80%;
     }
-
 }
 
 
