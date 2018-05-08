@@ -156,9 +156,16 @@ body {
     padding-left: 50%;
 }
 
-#price {
+.price {
     font-size: 25px;
     font-style: bold;
+}
+
+.content button {
+  float:right;
+  width: 15%;
+  background-color: #76323F;
+  color:white;
 }
 
 
@@ -204,6 +211,9 @@ body {
 
     .header {
     	background-image: url(img/ceva2.jpg);
+    }
+    .content button {
+      width: 20%;
     }
     
 }
