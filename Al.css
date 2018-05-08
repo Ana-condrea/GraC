@@ -12,7 +12,7 @@ body {
     padding: 10px;
     text-align: center;
     background-image: url(img/ceva.jpg);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #d8d8d8;
     color: #76323F;
 }
 
@@ -95,6 +95,7 @@ body {
 }
 
 .content img {
+    margin-top: 5%;
     margin-right: 15px;
     float: left;
     width: 30%;
@@ -104,9 +105,8 @@ body {
     padding-left: 50%;
 }
 
-.price {
+b {
     font-size: 25px;
-    font-style: bold;
 }
 
 #cev {
