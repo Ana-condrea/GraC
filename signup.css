@@ -13,7 +13,8 @@ form {
 
 label {
   display: inline-block;
-  width: 90px;
+  width: 90%;
+  margin-top: 2%;
   font-size: 20px;
   font-family: Georgia;
   color: white;
@@ -49,11 +50,11 @@ button {
 
 @media screen and (max-width: 700px) {
   input {
-    width: 70%;
+    width: 90%;
     }
   label {
     display: block;
-    font-size: 80%;
+    font-size: 100%;
   }
 
   .button {
