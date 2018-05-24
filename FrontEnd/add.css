@@ -1,0 +1,251 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+    padding: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 10px;
+    text-align: center;
+    background-image: url(img/ceva.jpg);
+    color: #76323F;
+}
+
+.header h1 {
+    font-family: Book Antiqua;
+    font-size: 80px;
+}
+
+.navbar {
+    overflow: hidden; 
+    background-color: #565656; 
+}
+
+.navbar a {
+    float: left;
+    display: block; 
+    color: white; 
+    text-align: center; 
+    padding: 14px 20px; 
+    text-decoration: none; 
+}
+
+.navbar .right {
+    float: right; 
+}
+
+.navbar a:hover {
+    background-color: #76323F; 
+    color: white; 
+}
+
+.navbar form {
+    padding: 9px 20px;
+    display: block; 
+    text-align: center;
+}
+
+.navbar form:hover {
+    background-color: #76323F;
+    color: white; 
+}
+
+.navbar input[type=search] {
+    text-align: center; 
+    padding: 4px 2px; 
+}
+
+.row { 
+    display: flex;
+    flex-wrap: wrap;
+    background-color: skyblue;
+}
+.row .side .container {
+  position: relative;
+  width: 50%;
+}
+
+.row .side .image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.row .side .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #565656;
+}
+
+.row .side .container:hover .overlay {
+  opacity: 1;
+}
+
+.row .side .text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.side {
+    flex: 25%;
+    background-color: #76323F; 
+    color: white;
+    padding: 20px; 
+}
+
+
+.side a {
+    color:#d1a7a7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.side a:hover {
+    text-decoration: underline;
+}
+.main { 
+    flex: 75%; 
+    background-color: white; 
+    color: #76323F;
+    padding: 0 0 20px 0;
+}
+
+.main h1 {
+    text-align: center;
+}
+
+.main form {
+  margin: 150px auto;
+  width: 340px;
+
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+label {
+  display: inline-block;
+  width: 80%;
+  font-size: 18px;
+  font-family: Georgia;
+  color:#565656; ;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.main input {
+  font: 1em sans-serif;
+  width: 300px;
+
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+
+  border: 3px solid skyblue;
+  border-radius: 3px;}
+
+.main input:focus {
+  border-color: #000;
+}
+
+.button {
+  padding-left: 110px;
+}
+
+button {
+  margin-left: .5em;
+  border: 3px solid skyblue;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.footer {
+    font-size: 15px;
+    padding: 1px; 
+    text-align: center; 
+    background: #ddd; 
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  .main img {
+    padding-bottom: 22%;
+  }
+
+  .row .side .text {
+     font-size:75%;
+  }
+  .main input {
+    width: 75%;
+  }
+  .button {
+    text-align: left;
+  }
+
+
+}
+
+@media screen and (max-width: 700px) {
+    .row { 
+        flex-direction: column;
+    }
+     .row .side .image {
+       display: block;
+       width: 22%;
+       height: auto;
+    }
+  
+    .main form {
+       width: 90%;
+     }
+
+}
+
+@media screen and (max-width: 500px) {
+    .header h1 {
+      font-size: 40px;
+    }
+
+    .header {
+      background-image: url(img/ceva2.jpg);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+
+    .navbar form {
+        float: none;
+        width: 100%;
+    }
+
+    .navbar input {
+        width: 80%;
+    }
+    .main input {
+       width: 80%;
+    }
+}
+
