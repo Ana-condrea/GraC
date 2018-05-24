@@ -7,10 +7,10 @@
 	    die("Connection failed: " . $conn->connect_error);
 	}
 
-  	$email = $_POST['user_email'];
+  	$user = $_POST['user'];
   	$pwd = $_POST['password'];
 
-  	$query = "SELECT * FROM Users WHERE Email ='$email'";
+  	$query = "SELECT * FROM Users WHERE Username ='$user'";
 
 	$result = mysqli_query($conn,$query);
 	if (mysqli_num_rows($result) >= 1) {
@@ -23,7 +23,7 @@
 			sleep(3);
 			echo '<script language="javascript"> history.go(-1); </script>';
 		} else {
-		header( 'Location: http://www.autographcoll.com/FrontEnd/Home.html' );
+			header( 'Location: http://www.autographcoll.com/FrontEnd/Home.html' );
 		}
 	}
 ?>
