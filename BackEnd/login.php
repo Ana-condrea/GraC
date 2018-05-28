@@ -2,11 +2,6 @@
 	include("config.php");
 	session_start();
 
-
-	if ($conn->connect_error) {
-	    die("Connection failed: " . $conn->connect_error);
-	}
-
   	$user = $_POST['user'];
   	$pwd = $_POST['password'];
 
@@ -23,7 +18,8 @@
 			sleep(3);
 			echo '<script language="javascript"> history.go(-1); </script>';
 		} else {
-			header( 'Location: http://www.autographcoll.com/FrontEnd/Home.html' );
+			$_SESSION['loggedin'] = true;
+			header( 'Location: http://www.autographcoll.com/FrontEnd/Proiect.html' );
 		}
 	}
 ?>
