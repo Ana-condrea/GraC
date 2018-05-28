@@ -1,10 +1,5 @@
 <?php
 include("config.php");
-session_start();
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 $password =  $_POST['password'];
 $rpassword =  $_POST['rpassword'];
@@ -59,6 +54,5 @@ if ($password != $rpassword) {
 	}
 }
 
-session_destroy();
 $conn->close();
 ?>
