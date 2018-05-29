@@ -7,7 +7,7 @@
      
     $search = mysqli_real_escape_string($conn, $search);
      
-    $query = "SELECT * FROM Autograph WHERE (Name LIKE '%".$search."%') OR (Description LIKE '%".$search."%') OR (Tags LIKE '%".$search."%')";
+    $query = "SELECT * FROM Autograph WHERE ((Name LIKE '%".$search."%') OR (Description LIKE '%".$search."%') OR (Tags LIKE '%".$search."%')) AND Sold = 1";
     
 	$result = mysqli_query($conn, $query);
 
