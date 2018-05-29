@@ -1,6 +1,6 @@
 <?php
-	include("config.php");
 	session_start();
+	include("config.php");
 
   	$user = $_POST['user'];
   	$pwd = $_POST['password'];
@@ -19,6 +19,7 @@
 			echo '<script language="javascript"> history.go(-1); </script>';
 		} else {
 			$_SESSION['loggedin'] = true;
+			$_SESSION['Username'] = $user;
 			header( 'Location: http://www.autographcoll.com/FrontEnd/Proiect.html' );
 		}
 	}
