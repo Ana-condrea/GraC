@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 	<title>Autograph Collector</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="signup.css">
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" type="text/css" href="signup.css">
 </head>
+
 <body>
-<form action="Home.html" method="post">
+<form action="../BackEnd/signup.php" method="post">
   <div>
     <label for="nume">First name:</label>
-    <input type="text" id="nume" name="name" >
+    <input type="text" id="nume" name="name" required>
   </div>
 
   <div>
     <label for="pnume">Last name:</label>
-    <input type="text" id="pnume" name="lname" >
+    <input type="text" id="pnume" name="lname" required>
   </div>
 
   <div>
     <label for="date">Date of birth:</label>
-    <input type="date" id="date" name="date_birth">
+    <input type="date" id="date" name="date_birth" required>
   </div>
 
   <div>
@@ -30,7 +31,7 @@
 
   <div>
     <label for="usr">User Name:</label>
-    <input type="text" id="usr" name="user_name">
+    <input type="text" id="usr" name="user_name" required>
   </div>
 
   <div>

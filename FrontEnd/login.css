@@ -1,9 +1,9 @@
 body {
-  background-image: url("img/pen.jpg");
+  background-image: url("img/pen1.jpg");
 }
 
 form {
-  margin: 100px auto;
+  margin: 150px auto;
   width: 340px;
 
   padding: 1em;
@@ -13,8 +13,7 @@ form {
 
 label {
   display: inline-block;
-  width: 90%;
-  margin-top: 2%;
+  width: 90px;
   font-size: 20px;
   font-family: Georgia;
   color: white;
@@ -48,21 +47,18 @@ button {
   background-color: white;
 }
 
-@media screen and (max-width: 700px) {
-  input {
-    width: 90%;
-    }
-  label {
-    display: block;
-    font-size: 100%;
-  }
+a {
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+}
 
-  .button {
-    padding-left: 0px;
-
-  }
+@media screen and (max-width: 400px) {
   form {
-    width: 80%;
+    width: 90%;
   }
-  
+
+  form input {
+    width: 100%;
+  }
 }
