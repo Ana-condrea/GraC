@@ -1,98 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Autograph Collector</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="add.css">
+  <title>Autograph Collector</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="add.css">
 </head>
 
 <body>
-	<div class="header">
-		<h1> Autographs </h1>
-	</div>
+  <div class="header">
+    <h1> Autographs </h1>
+  </div>
 
-	<div class="navbar">
-  		<a href="Proiect.html">Home</a>
-  		<a href="Al.html">Autograph List</a>
-  		<a href="Contact.html">Contact</a>
-    	<form class="right" action="Search.html" method="post">
-    			<input type="search" id="search" placeholder="Search.." name="search">
-  		</form>
-  		<a href="account.html" class="right">Your Account</a>
+  <div class="navbar">
+      <a href="Proiect.html">Home</a>
+      <a href="Al.html">Autograph List</a>
+      <a href="Contact.html">Contact</a>
+      <form class="right" action="Search.html" method="post">
+          <input type="search" id="search" placeholder="Search.." name="search">
+      </form>
+      <a href="account.html" class="right">Your Account</a>
   </div>
 
   <div class="row">
-		<div class="side">
+    <div class="side">
       <br>
-  		<h3>Information</h3>
+      <h3>Information</h3>
 
-  		<div class="container">
-  		<img src="img/create.jpg" alt="Avatar" class="image">
-  		<div class="overlay">
-   		<div class="text">Change photo</div>
-    	</div>
+      <div class="container">
+      <img src="img/create.jpg" alt="Avatar" class="image">
+      <div class="overlay">
+      <div class="text">Change photo</div>
+      </div>
     </div>
-	  <br>
-  		<p>Full Name:</p>
-  		<p>Email Address:</p>
-  		<p>Date of birth:</p>
-  		<p>User Name:</p>
-  		<p>Password:</p>
-  		<br>
-  		<p><a href="setting.html">Edit settings</a></p>
-  		<p><a href="add.html">Add autograph</a></p>
-  		<br><br>
-  	</div>
+    <br>
+      <?php include("../BackEnd/info.php"); show_account('account');?>
+      <br>
+      <p><a href="setting.html">Edit settings</a></p>
+      <p><a href="add.html">Add autograph</a></p>
+      <br><br>
+    </div>
 
     <div class="main">
       <br><br>
       <h1>Add autograph</h1>
-      <form action="account.html" method="post">
+      <form action="../BackEnd/add.php" method="post">
       
       <div>
           <label for="fileupload">Photo:</label> 
-            <input type="image" id="fileupload" src="img/create.jpg" alt="fileupload">
+            <input type="text" id="fileupload" name="path" required pattern="[A-Za-z0-9]+.jpg|[A-Za-z0-9]+.png|[A-Za-z0-9]+.jpeg" >
       </div>
 
       <div>
           <label for="nm">Name:</label>
-             <input type="text" id="nm" name="autograph_name" >
+             <input type="text" id="nm" name="autograph_name" required >
+      </div>
+      
+      <div>
+          <label for="ctg">Category:</label>
+             <input type="text" id="ctg" name="category" required>
       </div>
       
       <div>
           <label for="str">Description:</label>
-             <input type="text" id="str" name="story">
+             <input type="text" id="str" name="story" value="nothing" required>
       </div>
       
       <div>
           <label for="type">Obtained at:</label>
-             <input type="text" id="type" name="Type">
+             <input type="text" id="type" name="Type" value="nothing" required>
       </div>
       
       <div>
           <label for="Glocation">Geographic location:</label>
-             <input type="text" id="Glocation" name="GeoLoc">
+             <input type="text" id="Glocation" name="GeoLoc" value="nothing" required>
       </div>
       
       <div>
           <label for="Placed">Placed on:</label>
-             <input type="text" id="Placed" name="place">
+             <input type="text" id="Placed" name="place" required>
       </div>
       
       <div>
           <label for="special">Special mention:</label>
-             <input type="text" id="special" name="specialM">
+             <input type="text" id="special" name="specialM" value="nothing" required>
       </div>
 
       <div>
           <label for="will">Willing to trade for:</label>
-             <input type="text" id=will name="willing">
+             <input type="text" id="will"  name="willing" value="nothing" required>
+      </div>
+
+      <div>
+          <label for="nmb">in number of:</label>
+             <input type="text" id="nmb" name="number" value="0" required pattern="[1-9][0-9]|[0-9]">
       </div>
       
       <div>
           <label for="prc">Price:</label>
-             <input type="text" id="prc" name="price">
+             <input type="text" id="prc" name="price" required  pattern="[1-9][0-9]{$}|[1-9][0-9]+.+[0-9]{$}|[0-9]+.+[0-9]{$}|[1-9][0-9]{€}|[1-9][0-9]+.+[0-9]{€}|[0-9]+.+[0-9]{€}">
+      </div>
+      
+      <div>
+          <label for="tg">Tags:</label>
+             <input type="text" id="tg" required name="tag">
       </div>
 
 
@@ -104,10 +115,10 @@
 </div>
 </div>
 
-	<div class="footer">
-  		<p>Copyright &copy; Ungureanu Ioana & Condrea Ana</p>
-  		<p>@2018 FII</p>
-	</div>
+  <div class="footer">
+      <p>Copyright &copy; Ungureanu Ioana & Condrea Ana</p>
+      <p>@2018 FII</p>
+  </div>
 
 </body>
 </html>

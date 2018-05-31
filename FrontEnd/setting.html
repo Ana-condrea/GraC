@@ -36,21 +36,26 @@
     <div class="main">
       <br><br>
       <h1>My Account</h1>
-      <form action="account.html" method="post">
+      <form action="../BackEnd/setting.php" method="post">
       <div>
-          <label for="nume">Full Name:</label>
-             <input type="text" id="nume" name="full_name" >
-      </div>
+          <label for="nume">First name:</label>
+            <input type="text" id="nume" name="name" >
+     </div>
+  
+      <div>
+          <label for="pnume">Last name:</label>
+            <input type="text" id="pnume" name="lname" >
+      </div>
 
       <div>
          <label for="mail">Email Address:</label>
-            <input type="email" id="mail" name="user_email" required pattern="[ 
+            <input type="email" id="mail" name="user_email"  pattern="[ 
             A-Za-z0-9_]+@yahoo.com|[A-Za-z0-9_]+@gmail.com">
       </div>
 
       <div>
          <label for="date">Date of birth:</label>
-            <input type="date" id="date" name="date_birth">
+            <input type="date" id="date" name="date_birth" >
       </div>
 
       <div>
@@ -60,7 +65,7 @@
 
       <div>
           <label for="pwd">Password:</label>
-             <input type="password" id="pwd" name="password" minlength="6"              maxlength="15" required>
+             <input type="password" id="pwd" name="password" minlength="6"  maxlength="15" >
       </div>
    
   <div class="button">

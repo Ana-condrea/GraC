@@ -34,11 +34,7 @@
     	</div>
     </div>
 	  <br>
-  		<p>Full Name:</p>
-  		<p>Email Address:</p>
-  		<p>Date of birth:</p>
-  		<p>User Name:</p>
-  		<p>Password:</p>
+      <?php include("../BackEnd/info.php"); show_account('account');?>
   		<br>
   		<p><a href="setting.html">Edit settings</a></p>
   		<p><a href="add.html">Add autograph</a></p>
@@ -49,7 +45,9 @@
 
     <div class="main">
       <h1>My autographs</h1>
-      <div class="content">
+      <?php include("../BackEnd/autograph.php"); autograph('Mine');?>
+       <!--
+       <div class="content">
         <img src="img/legend.jpg" alt="JohnLegend">
         <h3>John Legend:</h3>
         <p>Genuine black ink autograph of American singer-songwriter John Legend on a black and white photo.  Signature obtained at the Sundance Film Festival, Utah in January 2017. Signed photo measures 10 x 8 inches. Double mounted in cream and black to an overall size of 16 x 12 inches.
@@ -62,8 +60,10 @@
         <p>Price: <b id="price">62.37€</b>.</p>
         <button type="button">Sell</button>
       </div>
-
+    -->
       <h1>To sell</h1>
+      <?php include("../BackEnd/sold.php"); autographsold('Sell');?>
+     <!-- 
        <div class="content">
         <img id="cev" src="img/beatles.jpg" alt="beatles">
         <h3>The Beatles:</h3>
@@ -80,7 +80,7 @@
 
      </div>
     </div>
-
+    -->
 	<div class="footer">
   		<p>Copyright &copy; Ungureanu Ioana & Condrea Ana</p>
   		<p>@2018 FII</p>
