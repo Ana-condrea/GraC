@@ -1,4 +1,5 @@
 <?php
+include("config.php");
 
 require_once 'dompdf/autoload.inc.php';
 
@@ -7,13 +8,10 @@ use Dompdf\Dompdf;
 $document = new Dompdf();
 
 
-//$document->loadHtml($page);
-
-$connect = mysqli_connect("localhost", "root", "", "project");
 
 $query = "SELECT Id, Name, Description,Price,Category FROM Autograph";
 
-$result = mysqli_query($connect, $query);
+$result = mysqli_query($conn, $query);
 $output = " 
 <style>
 	table {
