@@ -1,7 +1,7 @@
 <?php
 
 	function show_account($info) {
-		session_start();
+		//session_start();
 		include("config.php");
 		mysqli_set_charset($conn,"utf8");
  		if (isset($_SESSION['Username']) && $_SESSION['Username'] == true && $info == 'account'){
@@ -21,6 +21,7 @@
 				    <p>Email: '.$data['Email'].'</p>
 				    <p>Username: '.$data['Username'].'</p>
 				    <p>BirthDate: '.$data['BirthDate'].'</p>
+				    <p>Money: '.$data['Money'].'$</p>
 					';
 					
 		    }
