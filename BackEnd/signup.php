@@ -71,7 +71,7 @@ if ($password != $rpassword) {
 			$sql->bind_param('sssssis', $firstname, $lastname, $email, $userName, $hashed_password, $attention, $birthDate);
 			
 			if ($sql->execute()) {
-				header( 'Location: http://www.autographcoll.com/FrontEnd/login.html' );
+				header( 'Location: ../FrontEnd/login.html' );
 			} else {
 				echo "Error: INSERT INTO Users (`Id`, `FirstName`, `LastName`, `Email`, `Username`, `Password`, `Attention`, `BirthDate`) <br>" . $conn->error;
 			}
