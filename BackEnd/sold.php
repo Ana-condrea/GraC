@@ -25,7 +25,7 @@
 				    <p>Placed on: '.$data['Object'].'</p>
 				    <p>Special mention: '.$data['SpecialMention'].'</p>
 				    <p>Willing to trade for: '.$data['ExchangeFor'].' in number of: '.$data['ExchangeNr'].'</p>
-				    <p>Price: <b class="price">'.$data['Price'].'</b></p>
+				    <p>Price: <b class="price">'.$data['Price'].'$</b></p>
 				    <form method="POST" action="../BackEnd/delete.php">
 				    	<input type="hidden" name="id" value="'.$data['Id'].'">
 		    			<button type="submit">Delete</button>

@@ -31,8 +31,10 @@
 	 if (isset($_SESSION['Username']) && $_SESSION['Username'] == true) {
 			$user = $_SESSION['Username'];
 
-			$sql = "INSERT INTO  Autograph (`Id`,`Username`, `Name`,`Place`, `Location`, `Object`, `Price`,`Description`,`SpecialMention`, `ExchangeFor`,`ExchangeNr`,`Category`,`Authenticity`, `Sold`,`Path`,`Tags`) VALUES (null,'$user','$name','$place', '$obtained','$location','$price','$description','$mention','$trade','$number','$category','$authenticity','$sold','$photo','$tags')";
-			if ($conn->query($sql) === TRUE) {
+			$sql = $conn->prepare("INSERT INTO  Autograph (`Id`,`Username`, `Name`,`Place`, `Location`, `Object`, `Price`,`Description`,`SpecialMention`, `ExchangeFor`,`ExchangeNr`,`Category`,`Authenticity`, `Sold`,`Path`,`Tags`) VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			$sql->bind_param('sssssdsssisiiss',$user,$name, $obtained,$location,$place,$price,$description,$mention,$trade,$number,$category,$authenticity,$sold,$photo,$tags);
+
+			if ($sql->execute()) {
 				header( 'Location: ../FrontEnd/account.html' );
 			} else {
 				echo "Error: " . $sql . "<br>" . $conn->error;
