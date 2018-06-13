@@ -19,9 +19,16 @@ if ($password != $rpassword) {
 	$attention =  0;
 	$birthDate =  $_POST['date_birth'];
 
-	$query = "SELECT * FROM Users WHERE Username ='$userName'";
+	$query = $conn->prepare('SELECT * FROM Users WHERE Username = ?');
+	$query->bind_param('s', $userName);
+	$query->execute();
 
-	$result = mysqli_query($conn,$query);
+	$result = $query->get_result();
+
+	if($result === FALSE) {
+		die(mysqli_error($conn));
+	}
+
 	if (mysqli_num_rows($result) >= 1) {
 		echo 'Username already in use.';
 		ob_end_flush();
@@ -30,9 +37,11 @@ if ($password != $rpassword) {
 		echo '<script language="javascript"> history.go(-1); </script>';
 		
 	} else {
-		$query = "SELECT * FROM Users WHERE Email ='$email'";
+		$query = $conn->prepare('SELECT * FROM Users WHERE Email = ?');
+		$query->bind_param('s', $email);
+		$query->execute();
 
-		$result = mysqli_query($conn,$query);
+		$result = $query->get_result();
 		if (mysqli_num_rows($result) >= 1) {
 			echo 'Email already in use.';
 			ob_end_flush();
@@ -41,14 +50,16 @@ if ($password != $rpassword) {
 			echo '<script language="javascript"> history.go(-1); </script>';
 			
 		} else {
-			mail($email, "Bine ai venit!", "Multumim ca te-ai alaturat Autograph Collector.");
+			$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-			$sql = "INSERT INTO Users (`Id`, `FirstName`, `LastName`, `Email`, `Username`, `Password`, `Attention`, `BirthDate`) VALUES (null,'$firstname','$lastname','$email','$userName','$password','$attention','$birthDate')";
+			$sql = $conn->prepare("INSERT INTO Users (`Id`, `FirstName`, `LastName`, `Email`, `Username`, `Password`, `Attention`, `BirthDate`) VALUES (null,?,?,?,?,?,?,?)");
 
-			if ($conn->query($sql) === TRUE) {
+			$sql->bind_param('sssssis', $firstname, $lastname, $email, $userName, $hashed_password, $attention, $birthDate);
+			
+			if ($sql->execute()) {
 				header( 'Location: http://www.autographcoll.com/FrontEnd/login.html' );
 			} else {
-				echo "Error: " . $sql . "<br>" . $conn->error;
+				echo "Error: INSERT INTO Users (`Id`, `FirstName`, `LastName`, `Email`, `Username`, `Password`, `Attention`, `BirthDate`) <br>" . $conn->error;
 			}
 		}
 	}
