@@ -5,22 +5,25 @@
   	$user = $_POST['user'];
   	$pwd = $_POST['password'];
 
-  	$query = "SELECT * FROM Users WHERE Username ='$user'";
+  	$query = $conn->prepare('SELECT Username, Password FROM Users WHERE Username = ?');
+	$query->bind_param('s', $user);
+	$query->execute();
 
-	$result = mysqli_query($conn,$query);
+	$result = $query->get_result();
+
 	if (mysqli_num_rows($result) >= 1) {
 		$row = mysqli_fetch_assoc($result);
 
-		if($pwd != $row['Password']) {
+		if(password_verify($pwd, $row['Password'])) {
+			$_SESSION['loggedin'] = true;
+			$_SESSION['Username'] = $user;
+			header( 'Location: http://www.autographcoll.com/FrontEnd/Proiect.html' );
+		} else {
 			echo "Wrong password.";
 			ob_end_flush();
 			flush();
 			sleep(3);
 			echo '<script language="javascript"> history.go(-1); </script>';
-		} else {
-			$_SESSION['loggedin'] = true;
-			$_SESSION['Username'] = $user;
-			header( 'Location: http://www.autographcoll.com/FrontEnd/Proiect.html' );
 		}
 	}
 ?>

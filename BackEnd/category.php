@@ -4,7 +4,7 @@
 		include("config.php");
 		mysqli_set_charset($conn,"utf8");
 
-		$cat_query = "SELECT * FROM Autograph WHERE Category = '$category'";
+		$cat_query = "SELECT * FROM Autograph WHERE Category = '$category' ORDER BY Name";
 
 		$res = mysqli_query($conn, $cat_query);
 
@@ -22,12 +22,15 @@
 				    <p>Placed on: '.$data['Object'].'</p>
 				    <p>Special mention: '.$data['SpecialMention'].'</p>
 				    <p>Willing to trade for: '.$data['ExchangeFor'].' in number of: '.$data['ExchangeNr'].'</p>
-				    <p>Price: <b class="price">'.$data['Price'].'</b></p>
+				    <p>Price: <b class="price">'.$data['Price'].'$</b></p>
 				    <form method="POST" action="../BackEnd/buy.php">
 				    	<input type="hidden" name="id" value="'.$data['Id'].'">
 		    			<button type="submit">Buy</button>
 					</form>
-				    <button type="button">Trade</button>
+				    <form method="POST" action="../BackEnd/trade.php">
+				    	<input type="hidden" name="id" value="'.$data['Id'].'">
+		    			<button type="submit">Trade</button>
+					</form>
 					</div>';
 				}
 		    }

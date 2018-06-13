@@ -13,11 +13,11 @@
 		if (isset($_SESSION['Username']) && $_SESSION['Username'] == true) {
 		
 			$user = $_SESSION['Username'];
-			$query = "SELECT Username, Authenticity FROM Autograph WHERE Id ='$id'";
+			$query = "SELECT Username, Authenticity, Price FROM Autograph WHERE Id ='$id'";
 			$result = mysqli_query($conn, $query);
 
-			if($result === FALSE) { 
-				die(mysqli_error($conn)); 
+			if($result === FALSE) {
+				die(mysqli_error($conn));
 			}
 			
 			if (mysqli_num_rows($result) >= 1) {
@@ -38,6 +38,41 @@
 						sleep(3);
 						echo '<script language="javascript"> history.go(-1); </script>';
 						exit();
+					}
+
+					$query = "SELECT Money FROM Users WHERE Username ='$user'";
+					$res = mysqli_query($conn, $query);
+
+					if($res === FALSE) {
+						die(mysqli_error($conn));
+					}
+
+					$money = mysqli_fetch_assoc($res);
+
+					if($row['Price'] > $money['Money']) {
+						echo 'You do not have enough money.';
+						ob_end_flush();
+						flush();
+						sleep(3);
+						echo '<script language="javascript"> history.go(-1); </script>';
+						exit();
+					} else {
+
+						$mon = $row['Price'];
+						$query = "UPDATE Users SET Money = Money - '$mon' WHERE Username = '$user'";
+						$result = mysqli_query($conn, $query);
+
+						if($result === FALSE) {
+							die(mysqli_error($conn));
+						}
+
+						$usr = $row['Username'];
+						$query = "UPDATE Users SET Money = Money + '$mon' WHERE Username = '$usr'";
+						$result = mysqli_query($conn, $query);
+
+						if($result === FALSE) {
+							die(mysqli_error($conn));
+						}
 					}
 				}
 			}
