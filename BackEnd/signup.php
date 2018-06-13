@@ -49,6 +49,20 @@ if ($password != $rpassword) {
 			sleep(3);
 			echo '<script language="javascript"> history.go(-1); </script>';
 			
+		} 
+
+		$query = $conn->prepare('SELECT * FROM RestrictedUsers WHERE Email = ?');
+		$query->bind_param('s', $email);
+		$query->execute();
+
+		$result = $query->get_result();
+		if (mysqli_num_rows($result) >= 1) {
+			echo 'You are not allowed to make an account.';
+			ob_end_flush();
+			flush();
+			sleep(3);
+			echo '<script language="javascript"> history.go(-1); </script>';
+			
 		} else {
 			$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
