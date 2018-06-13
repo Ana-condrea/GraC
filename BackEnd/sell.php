@@ -29,6 +29,6 @@
 
 			$query = "UPDATE Autograph SET  Sold = 1 WHERE Username ='$user' and Id = '$id'";
 			$result = mysqli_query($conn,$query);
-			header( 'Location: http://www.autographcoll.com/FrontEnd/account.html' );
+			header( 'Location: ../FrontEnd/account.html' );
 		}
 ?>
