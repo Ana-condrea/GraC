@@ -9,5 +9,5 @@
 		die(mysqli_error($conn));
 	}
 
-	header( 'Location: http://www.autographcoll.com/FrontEnd/Al.html' );
+	header( 'Location: ../FrontEnd/Al.html' );
 ?>

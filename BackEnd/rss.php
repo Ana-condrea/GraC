@@ -29,5 +29,5 @@
 	$myfile = fopen("../FrontEnd/rss.xml", "w");
 	fwrite($myfile, $rss->asXML());
 	fclose($myfile);
-	header( 'Location: http://www.autographcoll.com/FrontEnd/rss.xml' );
+	header( 'Location: ../FrontEnd/rss.xml' );
 ?>

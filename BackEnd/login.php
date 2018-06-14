@@ -17,7 +17,7 @@
 		if(password_verify($pwd, $row['Password'])) {
 			$_SESSION['loggedin'] = true;
 			$_SESSION['Username'] = $user;
-			header( 'Location: http://www.autographcoll.com/FrontEnd/Proiect.html' );
+			header( 'Location: ../FrontEnd/Proiect.html' );
 		} else {
 			echo "Wrong password.";
 			ob_end_flush();
