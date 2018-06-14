@@ -46,13 +46,7 @@
     <div class="side">
       <br>
       <h3>Information</h3>
-
-      <div class="container">
-      <img src="img/create.jpg" alt="Avatar" class="image">
-      <div class="overlay">
-      <div class="text">Change photo</div>
-      </div>
-    </div>
+      <?php include("../BackEnd/path.php"); show_path('path');?>
     <br>
       <?php include("../BackEnd/info.php"); show_account('account');?>
       <br>
@@ -83,19 +77,19 @@
       
       <div>
           <label for="str">Description:</label>
-             <input type="text" id="str" name="story" value="nothing" required>
+             <input type="text" id="str" name="story" value="Nothing." required>
       </div>
       
       <div>
           <label for="type">Obtained at:</label>
-             <input type="text" onkeyup="hint(this.value)" id="type" name="Type" value="nothing" required>
+             <input type="text" onkeyup="hint(this.value)" id="type" name="Type" value="Nothing." required>
       </div>
 
       <label>Suggestions: <span id="Hint"></span></label>
       
       <div>
           <label for="Glocation">Geographic location:</label>
-             <input type="text" id="Glocation" name="GeoLoc" value="nothing" required>
+             <input type="text" id="Glocation" name="GeoLoc" value="Nothing." required>
       </div>
       
       <div>
@@ -105,12 +99,12 @@
       
       <div>
           <label for="special">Special mention:</label>
-             <input type="text" id="special" name="specialM" value="nothing" required>
+             <input type="text" id="special" name="specialM" value="Nothing." required>
       </div>
 
       <div>
           <label for="will">Willing to trade for:</label>
-             <input type="text" id="will"  name="willing" value="nothing" required>
+             <input type="text" id="will"  name="willing" value="Nothing." required>
       </div>
 
       <div>
@@ -120,7 +114,7 @@
       
       <div>
           <label for="prc">Price:</label>
-             <input type="text" id="prc" name="price" required  pattern="[1-9][0-9]{$}|[1-9][0-9]+.+[0-9]{$}|[0-9]+.+[0-9]{$}|[1-9][0-9]{€}|[1-9][0-9]+.+[0-9]{€}|[0-9]+.+[0-9]{€}">
+             <input type="text" id="prc" name="price" required pattern="[1-9][0-9]|[1-9][0-9]+.+[0-9]">
       </div>
       
       <div>
