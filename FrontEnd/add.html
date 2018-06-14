@@ -5,6 +5,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="add.css">
+
+  <script>
+  function hint(str) {
+      if (str.length == 0) { 
+          document.getElementById("Hint").innerHTML = "";
+          return;
+      } else {
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.open("GET", "../BackEnd/hint.php?q=" + str, true);
+          
+          xmlhttp.onreadystatechange = function() {
+              if (this.readyState === 4 && this.status === 200) {
+                  document.getElementById("Hint").innerHTML = this.responseText;
+              }
+          };
+
+          xmlhttp.send();
+      }
+  }
+  </script>
 </head>
 
 <body>
@@ -24,15 +44,9 @@
 
   <div class="row">
     <div class="side">
-    <br>
-    <h3>Information</h3>
+      <br>
+      <h3>Information</h3>
       <?php include("../BackEnd/path.php"); show_path('path');?>
-      <!--<div class="container">
-      <img src="img/create.jpg" alt="Avatar" class="image">
-      <div class="overlay">
-      <div class="text">Change photo</div>
-      </div>
-    </div>-->
     <br>
       <?php include("../BackEnd/info.php"); show_account('account');?>
       <br>
@@ -68,8 +82,10 @@
       
       <div>
           <label for="type">Obtained at:</label>
-             <input type="text" id="type" name="Type" value="Nothing." required>
+             <input type="text" onkeyup="hint(this.value)" id="type" name="Type" value="Nothing." required>
       </div>
+
+      <label>Suggestions: <span id="Hint"></span></label>
       
       <div>
           <label for="Glocation">Geographic location:</label>
@@ -98,7 +114,7 @@
       
       <div>
           <label for="prc">Price:</label>
-             <input type="text" id="prc" name="price" required  pattern="[1-9][0-9]{$}|[1-9][0-9]+.+[0-9]{$}|[0-9]+.+[0-9]{$}|[1-9][0-9]{€}|[1-9][0-9]+.+[0-9]{€}|[0-9]+.+[0-9]{€}">
+             <input type="text" id="prc" name="price" required pattern="[1-9][0-9]|[1-9][0-9]+.+[0-9]">
       </div>
       
       <div>
